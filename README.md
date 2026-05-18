@@ -1,1 +1,0 @@
-# AY2526T3-CCDEVAP-HO1-Corpuz
