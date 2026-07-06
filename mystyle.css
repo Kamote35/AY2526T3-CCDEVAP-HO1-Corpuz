@@ -1,110 +1,282 @@
-header> nav > a:hover {
-    color: #9fd3c7;
-    
+header nav a,
+nav header a {
+  color: #ececec;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
 }
 
-header > nav> a {
-    color: #ececec;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 10px;
+header nav a:hover,
+nav header a:hover {
+  color: #9fd3c7;
 }
 
 header {
-    position: fixed;
-    top: 20px;             /* Aligns it to the top of the page */
-    left: 50%;          /* Moves the left edge to the exact center of the screen */
-    transform: translateX(-50%); /* Shifts the nav back left by half of its own width */
-    z-index: 1000;      /* Ensures it stays on top of other content */
-    background-color: rgb(59, 131, 160);
-    color: #ececec;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #385170;
-    border-radius: 10px;
-    opacity:0.2;
-    transition: opacity 0.3s ease; 
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: rgb(59, 131, 160);
+  color: #ececec;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #385170;
+  border-radius: 10px;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
 }
 
 header:hover {
-    opacity: 1;
+  opacity: 1;
 }
-
 
 /*intro.html*/
 
 .intro {
-    background-image: url("images/BGflowers.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-
-
+  background-image: url("images/BGflowers.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .rounded-border {
-    margin: 10px 20px;
-    padding: 5px 20px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #385170;
-    border-radius: 15px;
-    background-color: hsl(67, 88%, 77%, 0.6);
+  margin: 10px 20px;
+  padding: 5px 20px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #385170;
+  border-radius: 15px;
+  background-color: hsl(67, 88%, 77%, 0.6);
 }
 
 .rounded-border > h1 {
-    font-size: 40px;
-    color: #ececec;
-    text-shadow: 2px 2px 4px #000000;
-    
+  font-size: 40px;
+  color: #ececec;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .rounded-border > h2 {
-    font-size: 30px;
-    color: #385170;
-    text-decoration: underline;
-    
+  font-size: 30px;
+  color: #385170;
+  text-decoration: underline;
 }
 
 .rounded-border > p {
-    font-size: 20px;
-    color: #142d4c;
-  
+  font-size: 20px;
+  color: #142d4c;
 }
 
 .intro-images {
-    clear:both;
-    display: flex;
-    justify-content: center;    /* Center horizontally */
-    color: white;
+  clear: both;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  color: white;
 }
 
 .intro-images > figure > figcaption {
-    border-style: dotted;
-    border-width: 1px;
-    border-color: #ffffff;
-    border-radius: 5px;
-    background-color: hsla(238, 82%, 64%, 0.6);
-    padding: 5px;
+  border-style: dotted;
+  border-width: 1px;
+  border-color: #ffffff;
+  border-radius: 5px;
+  background-color: hsla(238, 82%, 64%, 0.6);
+  padding: 5px;
 }
 
 .intro-images > figure > img {
-    border-style: solid;
-    border-color:rgba(255, 255, 255, 1);
-    border-width: 1px;
-    border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 1);
+  border-width: 1px;
+  border-radius: 10px;
 }
 
 footer {
-    position: relative;
-    margin: 0px;
-    background-color: #142d4c;
-    
+  position: relative;
+  margin: 0px;
+  background-color: #142d4c;
 }
 
 footer > p {
-    color:#ffffff;
+  color: #ffffff;
+}
 
+/* =========================================
+   Unified Page Styling (Based on intro.html)
+   ========================================= */
 
+/* Apply the .intro background to ALL pages to match the aesthetic */
+body {
+  background-image: url("images/BGflowers.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 100px; /* Prevents content from hiding behind the fixed header */
+  text-align: center;
+}
+
+/* =========================================
+   Structural Content Containers (The "Rounded Border" Look)
+   ========================================= */
+
+/* Apply the .rounded-border styling to <article> (used in hobbies/contacts) 
+   and the main <div> (used in index.html) so they match the intro page */
+body > div:not(.rounded-border):not(.intro-images),
+article {
+  margin: 20px auto;
+  padding: 20px 30px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #385170;
+  border-radius: 15px;
+  background-color: hsl(
+    67,
+    88%,
+    77%,
+    0.85
+  ); /* Slightly more opaque for readability */
+  max-width: 900px;
+}
+
+/* Inherit your existing typography styles for uniformity */
+h1 {
+  font-size: 40px;
+  color: #ececec;
+  text-shadow: 2px 2px 4px #000000;
+  text-align: center;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 30px;
+  color: #385170;
+  text-decoration: underline;
+}
+
+p {
+  font-size: 20px;
+  color: #142d4c;
+  line-height: 1.6;
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  background-color: #ececec;
+  width: 60%;
+  margin: 20px auto;
+  box-shadow: 1px 1px 2px #000000;
+}
+
+/* =========================================
+   Figures & Images (The "Intro Images" Look)
+   ========================================= */
+
+/* Apply the .intro-images styling directly to all <figure> tags */
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  color: white;
+  max-width: 900px;
+}
+
+figure > img {
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 1);
+  border-width: 1px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+figure > figcaption {
+  border-style: dotted;
+  border-width: 1px;
+  border-color: #ffffff;
+  border-radius: 5px;
+  background-color: hsla(238, 82%, 64%, 0.8);
+  padding: 10px;
+  margin-top: 10px;
+  max-width: 80%;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* =========================================
+   Tables (Hobbies & Contacts)
+   ========================================= */
+
+/* Keeps your tables readable inside the new rounded-border containers */
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+  padding: 20px;
+  border: 1px solid #385170;
+  text-align: center;
+}
+
+/* Keep headers in tables dark so they contrast against the white table background */
+caption > h2,
+caption > h3 {
+  color: #142d4c;
+  text-decoration: none;
+  text-shadow: none;
+  margin-bottom: 10px;
+}
+
+/* Hover effect on table images (games, social media) */
+th > a > img,
+th > img {
+  transition: transform 0.3s ease;
+  border: none; /* Removes the white border for table logos */
+  box-shadow: none;
+}
+
+th > a > img:hover,
+th > img:hover {
+  transform: scale(1.1);
+}
+
+/* =========================================
+   Footer Updates
+   ========================================= */
+
+footer {
+  position: relative;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #142d4c;
+  text-align: center;
+  border-top: 2px solid #385170;
+}
+
+footer > p {
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+footer > nav > a {
+  color: #9fd3c7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer > nav > a:hover {
+  color: #ececec;
+  text-decoration: underline;
 }
